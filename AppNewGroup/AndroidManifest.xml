@@ -27,6 +27,10 @@
             android:label="@string/title_activity_greetings"
             android:theme="@style/AppTheme.Light.TranslucentActionBar" >
         </activity>
+        <activity
+            android:name=".SMSsActivity"
+            android:label="@string/title_activity_greetings" >
+        </activity>
     </application>
 
 </manifest>

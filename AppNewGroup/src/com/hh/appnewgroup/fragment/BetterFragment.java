@@ -3,14 +3,18 @@ package com.hh.appnewgroup.fragment;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.hh.appnewgroup.R;
+import com.hh.appnewgroup.SMSsActivity;
 import com.hh.appnewgroup.adapter.PopularSMSAdapter;
 import com.hh.appnewgroup.db.ReadDB;
 import com.hh.appnewgroup.db.SMSObject;
@@ -46,6 +50,18 @@ public class BetterFragment extends Fragment {
 				R.layout.item_list_sms, lstSmsObjects);
 		
 		lvPopulated.setAdapter(PopularSMSAdapter);
+		
+		lvPopulated.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Intent mIntent = new Intent(mContext, SMSsActivity.class);
+				mIntent.putExtra("cast_id",lstSmsObjects.get(position).getCategory_id());
+				mIntent.putExtra("sms_id",position);
+				startActivity(mIntent);
+			}
+		});
 		
 		return rootView;
 	}

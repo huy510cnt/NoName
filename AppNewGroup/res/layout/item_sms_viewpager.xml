@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="10dp"
+    android:background="#80ff0000"
+    android:gravity="center|top"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvnumPages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:text="page"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/tvSMSView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvnumPages"
+        android:gravity="center|top"
+        android:paddingTop="20dp"
+        android:text="SMS"
+        android:textColor="#fff" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="1" >
+
+        <TextView
+            android:id="@+id/tvLike"
+            android:layout_width="0dp"
+            android:background="#80ff0000"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:drawableLeft="@drawable/ic_heart"
+            android:text="Thích"
+            android:textColor="#fff" />
+        <TextView
+            android:id="@+id/tvSent"
+            android:layout_width="0dp"
+            android:background="#80ff0000"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:drawableLeft="@drawable/ic_send"
+            android:text="Gửi tin nhắn"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+</RelativeLayout>
