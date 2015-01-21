@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.hh.appnewgroup.adapter.AdapterCategorys;
 import com.hh.appnewgroup.animation.Constant;
 import com.hh.appnewgroup.animation.SwitchAnimationUtil;
+import com.hh.appnewgroup.animation.SwitchAnimationUtil.AnimationType;
 import com.hh.appnewgroup.db.CategoryObject;
 import com.hh.appnewgroup.db.ReadDB;
 
@@ -28,9 +28,10 @@ public class MainActivity extends Activity {
 		super.onWindowFocusChanged(hasFocus);
 		if (mSwitchAnimationUtil == null) {
 			mSwitchAnimationUtil = new SwitchAnimationUtil();
-			mSwitchAnimationUtil.startAnimation(lvCategory, Constant.mRotate);
+			mSwitchAnimationUtil.startAnimation(lvCategory, randomStype());
 		}
 	}
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +52,7 @@ public class MainActivity extends Activity {
 		mListTheLoai = new ArrayList<CategoryObject>();
 		mListTheLoai = mReadDB.getListTheloai();
 
-		AdapterCategorys mAdapterCategorys = new AdapterCategorys(this,
-				mListTheLoai);
+		AdapterCategorys mAdapterCategorys = new AdapterCategorys(this,mListTheLoai);
 
 		lvCategory.setAdapter(mAdapterCategorys);
 
@@ -65,5 +65,35 @@ public class MainActivity extends Activity {
 		});
 
 		mReadDB.closeDatabase();
+	}
+	
+	public AnimationType randomStype() {
+		int random = getRandomIndex(1, 8);
+		AnimationType mAnimationType = null;
+		
+		if(random == 1){
+			mAnimationType = Constant.mAlpha;
+		}else if(random == 2){
+			mAnimationType = Constant.mFlipHorizon;
+		}else if(random == 3){
+			mAnimationType = Constant.mFlipVertical;
+		}else if(random == 4){
+			mAnimationType = Constant.mHorizionCross;
+		}else if(random == 5){
+			mAnimationType = Constant.mHorizionLeft;
+		}else if(random == 6){
+			mAnimationType = Constant.mHorizionRight;
+		}else if(random == 7){
+			mAnimationType = Constant.mRotate;
+		}else {
+			mAnimationType = Constant.mScale;
+		}
+		
+		
+		return mAnimationType;
+		
+	}
+	private int getRandomIndex(int min, int max) {
+		return (int) (Math.random() * (max - min + 1)) + min;
 	}
 }
