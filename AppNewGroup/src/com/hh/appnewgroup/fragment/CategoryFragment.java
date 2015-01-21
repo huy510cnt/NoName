@@ -1,3 +1,4 @@
+
 package com.hh.appnewgroup.fragment;
 
 
@@ -19,7 +20,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class CategoryFragment extends Fragment {
-	private ListView lvCategory;
+	public static ListView lvCategory;
 	private ReadDB mReadDB;
 	private Context mContext;
 	ArrayList<CategoryObject> mListTheLoai;

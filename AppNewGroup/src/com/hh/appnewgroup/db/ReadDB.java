@@ -120,13 +120,44 @@ public class ReadDB extends SQLiteOpenHelper{
 				lstSMSObject.add(new SMSObject(smsCursor.getInt(smsCursor.getColumnIndex("id")),  
 						smsCursor.getString(smsCursor.getColumnIndex("content")), 
 						smsCursor.getInt(smsCursor.getColumnIndex("favorited")), 
-						smsCursor.getString(smsCursor.getColumnIndex("content_non_accent")) , smsCursor.getString(smsCursor.getColumnIndex("category_id"))));
+						smsCursor.getString(smsCursor.getColumnIndex("content_non_accent")) , 
+						smsCursor.getString(smsCursor.getColumnIndex("category_id")),smsCursor.getInt(smsCursor.getColumnIndex("populated"))));
 			}
 		}
 		return lstSMSObject;
 	}
 	
+	public ArrayList<SMSObject> getlistSMSObjectPopulate(){
+			
+			ArrayList<SMSObject> lstSMSObject = new ArrayList<SMSObject>();
+			Cursor smsCursor = getCursorQuery("tbl_template", null, "populated = " + 1,null,null, null, null);
+			if (smsCursor != null){
+				while (smsCursor.moveToNext()) {
+					lstSMSObject.add(new SMSObject(smsCursor.getInt(smsCursor.getColumnIndex("id")),  
+							smsCursor.getString(smsCursor.getColumnIndex("content")), 
+							smsCursor.getInt(smsCursor.getColumnIndex("favorited")), 
+							smsCursor.getString(smsCursor.getColumnIndex("content_non_accent")) , 
+							smsCursor.getString(smsCursor.getColumnIndex("category_id")),smsCursor.getInt(smsCursor.getColumnIndex("populated"))));
+				}
+			}
+			return lstSMSObject;
+		}
 	
+	public ArrayList<SMSObject> getlistSMSObjectFavorite(){
+		
+		ArrayList<SMSObject> lstSMSObject = new ArrayList<SMSObject>();
+		Cursor smsCursor = getCursorQuery("tbl_template", null, "favorited = " + 1,null,null, null, null);
+		if (smsCursor != null){
+			while (smsCursor.moveToNext()) {
+				lstSMSObject.add(new SMSObject(smsCursor.getInt(smsCursor.getColumnIndex("id")),  
+						smsCursor.getString(smsCursor.getColumnIndex("content")), 
+						smsCursor.getInt(smsCursor.getColumnIndex("favorited")), 
+						smsCursor.getString(smsCursor.getColumnIndex("content_non_accent")) , 
+						smsCursor.getString(smsCursor.getColumnIndex("category_id")),smsCursor.getInt(smsCursor.getColumnIndex("populated"))));
+			}
+		}
+		return lstSMSObject;
+	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {

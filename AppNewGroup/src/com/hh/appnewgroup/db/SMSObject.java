@@ -6,18 +6,28 @@ public class SMSObject {
 	private int favorited;
 	private String content_non_accent;
 	private String category_id;
+	private int populate;
 	
 	public SMSObject() {
 	}
 	
 	public SMSObject(int id, String content, int favorited,
-			String content_non_accent, String category_id) {
+			String content_non_accent, String category_id,int populate) {
 		super();
 		this.id = id;
 		this.content = content;
 		this.favorited = favorited;
 		this.content_non_accent = content_non_accent;
 		this.category_id = category_id;
+		this.populate = populate;
+	}
+
+	public int getPopulate() {
+		return populate;
+	}
+
+	public void setPopulate(int populate) {
+		this.populate = populate;
 	}
 
 	public int getId() {
