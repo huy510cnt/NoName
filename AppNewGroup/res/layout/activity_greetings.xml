@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <RelativeLayout
+            android:id="@+id/rlMenu"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#FF0000" >
+
+            <TextView
+                android:id="@+id/tvBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="7dp"
+                android:text="Thoát"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:paddingRight="7dp"
+                android:drawableLeft="@drawable/ic_arrow_left" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Lời chúc"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:textSize="19dp" />
+
+        </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listGreet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlMenu" >
+    </ListView>
+
+</RelativeLayout>

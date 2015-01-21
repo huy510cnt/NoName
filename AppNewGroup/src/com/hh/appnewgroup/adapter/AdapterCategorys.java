@@ -3,14 +3,17 @@ package com.hh.appnewgroup.adapter;
 
 import java.util.ArrayList;
 
+import com.hh.appnewgroup.GreetingsActivity;
 import com.hh.appnewgroup.db.CategoryCache;
 import com.hh.appnewgroup.db.CategoryObject;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -41,7 +44,7 @@ public class AdapterCategorys extends BaseAdapter{
 	        return 0;
 	    }
 	
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		View view = convertView;
 		CategoryCache viewCache;
 		CategoryObject Category = arr.get(position);
@@ -66,6 +69,16 @@ public class AdapterCategorys extends BaseAdapter{
 		
 		
 		mImageView.setImageResource(imgDrawerble);
+		mImageView.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(context, GreetingsActivity.class);
+				intent.putExtra("id_category",arr.get(position).getId_category());
+				context.startActivity(intent);
+			}
+		});
 		
 		return view;
 	}
