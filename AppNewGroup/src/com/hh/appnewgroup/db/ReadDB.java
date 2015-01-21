@@ -114,7 +114,7 @@ public class ReadDB extends SQLiteOpenHelper{
 	public ArrayList<SMSObject> getlistSMSObject(int cats_id){
 		
 		ArrayList<SMSObject> lstSMSObject = new ArrayList<SMSObject>();
-		Cursor smsCursor = getCursorQuery("tbl_template", null, "id = " + cats_id,null,null, null, null);
+		Cursor smsCursor = getCursorQuery("tbl_template", null, "category_id = " + cats_id,null,null, null, null);
 		if (smsCursor != null){
 			while (smsCursor.moveToNext()) {
 				lstSMSObject.add(new SMSObject(smsCursor.getInt(smsCursor.getColumnIndex("id")),  

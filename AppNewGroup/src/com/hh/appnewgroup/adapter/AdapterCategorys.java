@@ -3,6 +3,11 @@ package com.hh.appnewgroup.adapter;
 
 import java.util.ArrayList;
 
+import com.hh.appnewgroup.GreetingsActivity;
+import com.hh.appnewgroup.db.CategoryCache;
+import com.hh.appnewgroup.db.CategoryObject;
+
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -12,10 +17,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-
-import com.hh.appnewgroup.GreetingsActivity;
-import com.hh.appnewgroup.db.CategoryCache;
-import com.hh.appnewgroup.db.CategoryObject;
 
 public class AdapterCategorys extends BaseAdapter{
 	private int resouce;
