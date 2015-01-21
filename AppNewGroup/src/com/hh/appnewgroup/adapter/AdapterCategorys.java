@@ -61,7 +61,7 @@ public class AdapterCategorys extends BaseAdapter{
 		Log.e("", "" + arr.get(position).getName_category());
 		
 		
-		String mStringImg = Category.getImage_category();
+		final String mStringImg = Category.getImage_category();
 		
 		ImageView mImageView = viewCache.getImageView(resouce);
 		
@@ -76,6 +76,7 @@ public class AdapterCategorys extends BaseAdapter{
 				// TODO Auto-generated method stub
 				Intent intent=new Intent(context, GreetingsActivity.class);
 				intent.putExtra("id_category",arr.get(position).getId_category());
+				intent.putExtra("mStringImg", mStringImg);
 				context.startActivity(intent);
 			}
 		});

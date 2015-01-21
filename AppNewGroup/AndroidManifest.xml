@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="14"
         android:targetSdkVersion="21" />
 
     <application
@@ -24,7 +24,8 @@
         </activity>
         <activity
             android:name=".GreetingsActivity"
-            android:label="@string/title_activity_greetings" >
+            android:label="@string/title_activity_greetings"
+            android:theme="@style/AppTheme.Light.TranslucentActionBar" >
         </activity>
         <activity
             android:name=".SMSsActivity"
