@@ -26,6 +26,10 @@
             android:name=".GreetingsActivity"
             android:label="@string/title_activity_greetings" >
         </activity>
+        <activity
+            android:name=".SMSsActivity"
+            android:label="@string/title_activity_greetings" >
+        </activity>
     </application>
 
 </manifest>
