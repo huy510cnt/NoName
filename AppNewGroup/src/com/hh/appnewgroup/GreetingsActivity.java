@@ -52,10 +52,6 @@ public class GreetingsActivity extends Activity {
             }
         });
         
-        
-		/*Drawable transparentDrawable = new ColorDrawable(Color.TRANSPARENT);
-		getActionBar().setBackgroundDrawable(transparentDrawable);
-		getActionBar().setTitle("Lời chúc");*/
 		
 		Bundle extras = getIntent().getExtras();
 		id_category = extras.getInt("id_category");
