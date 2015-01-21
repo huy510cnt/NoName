@@ -2,8 +2,10 @@ package com.hh.appnewgroup;
 
 import java.util.ArrayList;
 
+import com.hh.appnewgroup.adapter.PopularSMSAdapter;
 import com.hh.appnewgroup.db.CategoryObject;
 import com.hh.appnewgroup.db.ReadDB;
+import com.hh.appnewgroup.db.SMSObject;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,7 +24,8 @@ public class GreetingsActivity extends Activity {
 	private int id_category = 0;
 
 	private ReadDB mReadDB;
-	ArrayList<CategoryObject> mListTheLoai;
+	private ArrayList<CategoryObject> mListTheLoai;
+	private ArrayList<SMSObject> mLisSms;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +45,9 @@ public class GreetingsActivity extends Activity {
 		}
 
 		mListTheLoai = new ArrayList<CategoryObject>();
+		mLisSms=new ArrayList<SMSObject>();
 		mListTheLoai = mReadDB.getListTheloai();
+		mLisSms=mReadDB.getlistSMSObject(id_category);
 
 		mReadDB.close();
 		CategoryObject ob = new CategoryObject();
@@ -58,6 +64,8 @@ public class GreetingsActivity extends Activity {
 				onBackPressed();
 			}
 		});
+		PopularSMSAdapter adapter=new PopularSMSAdapter(GreetingsActivity.this, R.layout.item_list_sms, mLisSms);
+		listGreet.setAdapter(adapter);
 	}
 
 	public void initUI() {
