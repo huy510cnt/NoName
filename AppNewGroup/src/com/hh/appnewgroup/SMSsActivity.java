@@ -3,6 +3,7 @@ package com.hh.appnewgroup;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
@@ -20,10 +21,17 @@ public class SMSsActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sms_view_activity);
 		getActionBar().hide();
+		int castid = 0;
+		int smsid = 0;
+		Intent mIntent = getIntent();
+		if(mIntent != null){
+			castid = mIntent.getIntExtra("cast_id", 0);
+			smsid = mIntent.getIntExtra("sms_id", 0);
+		}
 		
 		
 		mPager = (ViewPager) findViewById(R.id.view_pager);
-		getData(1,1);
+		getData(castid,smsid);
 		
 		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
