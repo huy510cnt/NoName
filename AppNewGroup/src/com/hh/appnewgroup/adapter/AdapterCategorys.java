@@ -7,6 +7,7 @@ import com.hh.appnewgroup.db.CategoryCache;
 import com.hh.appnewgroup.db.CategoryObject;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +17,11 @@ import android.widget.ImageView;
 
 public class AdapterCategorys extends BaseAdapter{
 	private int resouce;
-	Activity context = null;
+	Context context = null;
 	 private LayoutInflater inflater;
 	ArrayList<CategoryObject> arr = null;
 	
-	public AdapterCategorys(Activity context, int resouce,ArrayList<CategoryObject> list) {
+	public AdapterCategorys(Context context, int resouce,ArrayList<CategoryObject> list) {
 		this.context = context;
 		this.resouce = resouce;
 		inflater = LayoutInflater.from( context );
