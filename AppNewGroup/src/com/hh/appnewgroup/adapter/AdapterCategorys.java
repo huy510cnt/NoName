@@ -4,21 +4,25 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import com.hh.appnewgroup.R;
+import com.hh.appnewgroup.db.CategoryCache;
 import com.hh.appnewgroup.db.CategoryObject;
 
 public class AdapterCategorys extends BaseAdapter{
-	
+	private int resouce;
 	Activity context = null;
+	 private LayoutInflater inflater;
 	ArrayList<CategoryObject> arr = null;
 	
-	public AdapterCategorys(Activity context, ArrayList<CategoryObject> list) {
+	public AdapterCategorys(Activity context, int resouce,ArrayList<CategoryObject> list) {
 		this.context = context;
+		this.resouce = resouce;
+		inflater = LayoutInflater.from( context );
 		this.arr = list;
 	}
 	
@@ -37,29 +41,32 @@ public class AdapterCategorys extends BaseAdapter{
 	
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = convertView;
-		if (view == null) {
-			view = View.inflate(context, R.layout.list_categorys_layout, null);
-		}
+		CategoryCache viewCache;
 		CategoryObject Category = arr.get(position);
+		
+		if (view == null) {
+			view = inflater.inflate(resouce, null);
+			viewCache = new CategoryCache(view);
+			view.setTag(viewCache);
+		}else{
+			view = convertView;
+			viewCache = ( CategoryCache ) view.getTag();
+		}
+		
 		Log.e("", "" + arr.get(position).getName_category());
-		ViewHolder mViewHoldertmp = new ViewHolder();
 		
-		
-		mViewHoldertmp.image = (ImageView) view.findViewById(R.id.imgIcon);
-		view.setTag(mViewHoldertmp);
 		
 		String mStringImg = Category.getImage_category();
+		
+		ImageView mImageView = viewCache.getImageView(resouce);
 		
 		int imgDrawerble = context.getResources().getIdentifier(mStringImg, "drawable", context.getPackageName());
 		
 		
-		mViewHoldertmp.image.setImageResource(imgDrawerble);
+		mImageView.setImageResource(imgDrawerble);
 		
 		return view;
 	}
 	
-	private class ViewHolder {
-        ImageView image;
-    }
 
 }

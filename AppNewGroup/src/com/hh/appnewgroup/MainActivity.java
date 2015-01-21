@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
 		mListTheLoai = new ArrayList<CategoryObject>();
 		mListTheLoai = mReadDB.getListTheloai();
 
-		AdapterCategorys mAdapterCategorys = new AdapterCategorys(this,mListTheLoai);
+		AdapterCategorys mAdapterCategorys = new AdapterCategorys(this,R.layout.list_categorys_layout,mListTheLoai);
 
 		lvCategory.setAdapter(mAdapterCategorys);
 
