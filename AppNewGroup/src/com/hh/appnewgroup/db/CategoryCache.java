@@ -1,9 +1,10 @@
 package com.hh.appnewgroup.db;
 
+import com.hh.appnewgroup.R;
+
 import android.view.View;
 import android.widget.ImageView;
 
-import com.hh.appnewgroup.R;
 
 public class CategoryCache {
 	private View baseView;

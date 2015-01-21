@@ -3,6 +3,7 @@ package com.hh.appnewgroup.animation;
 import com.hh.appnewgroup.animation.SwitchAnimationUtil.AnimationType;
 
 
+
 public class Constant {
     public static AnimationType mAlpha = AnimationType.ALPHA;
     public static AnimationType mRotate = AnimationType.ROTATE;
