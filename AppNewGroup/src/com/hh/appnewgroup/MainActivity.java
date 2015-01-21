@@ -11,6 +11,7 @@ import com.hh.appnewgroup.adapter.TabsPagerAdapter;
 import com.hh.appnewgroup.animation.Constant;
 import com.hh.appnewgroup.animation.SwitchAnimationUtil;
 import com.hh.appnewgroup.animation.SwitchAnimationUtil.AnimationType;
+import com.hh.appnewgroup.fragment.BetterFragment;
 import com.hh.appnewgroup.fragment.CategoryFragment;
 import com.hh.appnewgroup.function.UtilFuntion;
 
@@ -30,11 +31,16 @@ public class MainActivity extends FragmentActivity implements
 		super.onWindowFocusChanged(hasFocus);
 		if (mSwitchAnimationUtil == null) {
 			mSwitchAnimationUtil = new SwitchAnimationUtil();
-			mSwitchAnimationUtil.startAnimation(CategoryFragment.lvCategory,getRanDomType());
+			mSwitchAnimationUtil.startAnimation(BetterFragment.lvPopulated,getRanDomType());
 		}
 	}
 	
-	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		
+		super.onResume();
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
