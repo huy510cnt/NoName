@@ -2,23 +2,17 @@ package com.hh.appnewgroup;
 
 import java.util.ArrayList;
 
-import com.hh.appnewgroup.adapter.PopularSMSAdapter;
-import com.hh.appnewgroup.db.CategoryObject;
-import com.hh.appnewgroup.db.ReadDB;
-import com.hh.appnewgroup.db.SMSObject;
-import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
-
 import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import com.hh.appnewgroup.adapter.PopularSMSAdapter;
+import com.hh.appnewgroup.db.ReadDB;
+import com.hh.appnewgroup.db.SMSObject;
+import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 public class GreetingsActivity extends Activity {
 
 	private ListView listGreet;
@@ -41,7 +35,6 @@ public class GreetingsActivity extends Activity {
         setContentView(helper.createView(this));
         helper.initActionBar(this);
         
-        getActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>Lời chúc"));
         getActionBar().setIcon(R.drawable.ic_arrow_left);
         getActionBar().setHomeButtonEnabled(true);
         ImageView iconImage = (ImageView) findViewById(android.R.id.home);
@@ -56,6 +49,8 @@ public class GreetingsActivity extends Activity {
 		Bundle extras = getIntent().getExtras();
 		id_category = extras.getInt("id_category");
 		mStringImg=extras.getString("mStringImg");
+		
+		getActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>Lời chúc"));
 		mReadDB = new ReadDB(GreetingsActivity.this);
 		try {
 			mReadDB.createDatabase();
@@ -65,7 +60,7 @@ public class GreetingsActivity extends Activity {
 		}
 		mLisSms=new ArrayList<SMSObject>();
 		mLisSms=mReadDB.getlistSMSObject(id_category);
-
+		getActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>" +mReadDB.getTitleCates(id_category)+""));
 		mReadDB.close();
 		
 		image_header=(ImageView)findViewById(R.id.image_header);

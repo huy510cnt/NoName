@@ -3,6 +3,8 @@ package com.hh.appnewgroup;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -56,8 +58,8 @@ public class MainActivity extends FragmentActivity implements
 		//	actionBar.setHomeButtonEnabled(false);
 		actionBar.setDisplayShowHomeEnabled(false);
 		actionBar.setDisplayShowTitleEnabled(false);
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);		
-
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);	
+		actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff0000"))); 
 		// Adding Tabs
 		for (int tab_name : tabs) {
 			actionBar.addTab(actionBar.newTab().setIcon(tab_name).setTabListener(this));

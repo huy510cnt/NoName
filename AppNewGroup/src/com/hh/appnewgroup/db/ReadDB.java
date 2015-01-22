@@ -158,6 +158,18 @@ public class ReadDB extends SQLiteOpenHelper{
 		}
 		return lstSMSObject;
 	}
+	//GetTile
+	public String getTitleCates(int cates_id){
+		
+		String lstSMSObject = "";
+		Cursor smsCursor = getCursorQuery("tbl_Category", null, "id = " + cates_id,null,null, null, null);
+		if (smsCursor != null){
+			while (smsCursor.moveToNext()) {
+				lstSMSObject = smsCursor.getString(smsCursor.getColumnIndex("name"));
+			}
+		}
+		return lstSMSObject;
+	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {

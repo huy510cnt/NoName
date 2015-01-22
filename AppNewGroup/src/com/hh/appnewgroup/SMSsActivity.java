@@ -3,27 +3,67 @@ package com.hh.appnewgroup;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 import com.hh.appnewgroup.adapter.SMSViewpagerAdapter;
 import com.hh.appnewgroup.db.ReadDB;
 import com.hh.appnewgroup.db.SMSObject;
 
-public class SMSsActivity extends Activity{
+public class SMSsActivity extends Activity {
 	private ReadDB mReadDB;
 	private ViewPager mPager;
-	private SMSViewpagerAdapter mPagerAdapter;
+	private SMSViewpagerAdapter mPagerAdapter ;
 	private ArrayList<SMSObject> lstSMS = new ArrayList<SMSObject>();
+	private TextView tvBack;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sms_view_activity);
 		getActionBar().hide();
 		
-		
+		Intent mIntent = getIntent();
+		int position = 0;
 		mPager = (ViewPager) findViewById(R.id.view_pager);
-		getData(1,1);
+		tvBack = (TextView) findViewById(R.id.tvBack);
+		
+		if (mIntent != null) {
+			position = Integer.valueOf(mIntent.getStringExtra("sms_id"));
+		}
+		
+		tvBack.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				onBackPressed();
+			}
+		});
+		getData(position);
+		
+
+	}
+
+	public void getData(int current) {
+		mReadDB = new ReadDB(SMSsActivity.this);
+		try {
+			mReadDB.createDatabase();
+			mReadDB.openDatabase();
+		} catch (Exception e) {
+
+		}
+		if (lstSMS != null)
+			lstSMS.clear();
+		
+		lstSMS = mReadDB.getlistSMSObjectPopulate();
+		
+		mPagerAdapter = new SMSViewpagerAdapter(SMSsActivity.this, lstSMS);
+		mPager.setAdapter(mPagerAdapter);
+		mPager.setCurrentItem(current);
 		
 		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
@@ -44,21 +84,7 @@ public class SMSsActivity extends Activity{
 
 			}
 		});
-
 		
-	}
-	
-	public void getData(int cats_id,int current) {
-		mReadDB = new ReadDB(this);
-		mReadDB.openDatabase();
-		if (lstSMS != null)
-			lstSMS.clear();
-		lstSMS = new ArrayList<SMSObject>();
-		lstSMS = mReadDB.getlistSMSObject(cats_id);
 		mReadDB.closeDatabase();
-
-		mPagerAdapter = new SMSViewpagerAdapter(this, lstSMS);
-		mPager.setAdapter(mPagerAdapter);
-		mPager.setCurrentItem(current);
 	}
 }

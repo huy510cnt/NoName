@@ -13,6 +13,7 @@ public final class R {
     public static final class color {
         public static final int black=0x7f040001;
         public static final int red=0x7f040000;
+        public static final int white=0x7f040002;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -28,29 +29,29 @@ public final class R {
         public static final int bg_category_detail=0x7f020000;
         public static final int bg_item_red=0x7f020001;
         public static final int bg_item_red_actionbar=0x7f020002;
-        public static final int bg_item_white=0x7f020003;
-        public static final int detail_background=0x7f020004;
-        public static final int fab__gradient=0x7f020005;
-        public static final int fab__gradient_light=0x7f020006;
-        public static final int ic_arrow_left=0x7f020007;
-        public static final int ic_category=0x7f020008;
-        public static final int ic_category_1=0x7f020009;
-        public static final int ic_category_2=0x7f02000a;
-        public static final int ic_category_3=0x7f02000b;
-        public static final int ic_category_4=0x7f02000c;
-        public static final int ic_category_5=0x7f02000d;
-        public static final int ic_category_6=0x7f02000e;
-        public static final int ic_favorited_header=0x7f02000f;
-        public static final int ic_heart=0x7f020010;
-        public static final int ic_heart_favorited=0x7f020011;
-        public static final int ic_home=0x7f020012;
-        public static final int ic_home_header=0x7f020013;
-        public static final int ic_launcher=0x7f020014;
-        public static final int ic_send=0x7f020015;
+        public static final int bg_item_red_back=0x7f020003;
+        public static final int bg_item_white=0x7f020004;
+        public static final int detail_background=0x7f020005;
+        public static final int fab__gradient=0x7f020006;
+        public static final int fab__gradient_light=0x7f020007;
+        public static final int ic_arrow_left=0x7f020008;
+        public static final int ic_category=0x7f020009;
+        public static final int ic_category_1=0x7f02000a;
+        public static final int ic_category_2=0x7f02000b;
+        public static final int ic_category_3=0x7f02000c;
+        public static final int ic_category_4=0x7f02000d;
+        public static final int ic_category_5=0x7f02000e;
+        public static final int ic_category_6=0x7f02000f;
+        public static final int ic_favorited_header=0x7f020010;
+        public static final int ic_heart=0x7f020011;
+        public static final int ic_heart_favorited=0x7f020012;
+        public static final int ic_home=0x7f020013;
+        public static final int ic_home_header=0x7f020014;
+        public static final int ic_launcher=0x7f020015;
+        public static final int ic_send=0x7f020016;
     }
     public static final class id {
-        public static final int action_settings=0x7f090018;
-        public static final int admob=0x7f090017;
+        public static final int action_settings=0x7f090016;
         public static final int fab__container=0x7f090005;
         public static final int fab__content_top_margin=0x7f090006;
         public static final int fab__gradient=0x7f090002;
@@ -62,7 +63,6 @@ public final class R {
         public static final int lvCategory=0x7f090008;
         public static final int lvFavorite=0x7f090009;
         public static final int lvPopulated=0x7f090007;
-        public static final int mRelativeLayout=0x7f090016;
         public static final int pager=0x7f090000;
         public static final int rlMenu=0x7f090012;
         public static final int tvBack=0x7f090013;
@@ -126,13 +126,16 @@ public final class R {
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int AppTheme_Light_TranslucentActionBar=0x7f070002;
-        public static final int Widget=0x7f070004;
-        public static final int Widget_ActionBar=0x7f070005;
-        public static final int Widget_ActionBar_Transparent=0x7f070008;
-        public static final int Widget_Light=0x7f070006;
-        public static final int Widget_Light_ActionBar=0x7f070007;
-        public static final int Widget_Light_ActionBar_Transparent=0x7f070003;
+        public static final int AppTheme=0x7f070004;
+        public static final int AppTheme_Light_TranslucentActionBar=0x7f070005;
+        public static final int MyActionBarTheme=0x7f070002;
+        public static final int MyCustomTheme=0x7f070001;
+        public static final int MyTheme_ActionBar_TitleTextStyle=0x7f070003;
+        public static final int Widget=0x7f070007;
+        public static final int Widget_ActionBar=0x7f070008;
+        public static final int Widget_ActionBar_Transparent=0x7f07000b;
+        public static final int Widget_Light=0x7f070009;
+        public static final int Widget_Light_ActionBar=0x7f07000a;
+        public static final int Widget_Light_ActionBar_Transparent=0x7f070006;
     }
 }
