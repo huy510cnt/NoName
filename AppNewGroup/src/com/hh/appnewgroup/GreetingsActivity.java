@@ -2,7 +2,6 @@ package com.hh.appnewgroup;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -16,7 +15,7 @@ import com.hh.appnewgroup.adapter.PopularSMSAdapter;
 import com.hh.appnewgroup.db.ReadDB;
 import com.hh.appnewgroup.db.SMSObject;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
-public class GreetingsActivity extends Activity {
+public class GreetingsActivity extends ActivityBase {
 
 	private ListView listGreet;
 	private int id_category = 0;
@@ -88,6 +87,10 @@ public class GreetingsActivity extends Activity {
 			}
 		});
 	}
-
+@Override
+public void onBackPressed() {
+	// TODO Auto-generated method stub
+	super.onBackPressed();
+}
 
 }

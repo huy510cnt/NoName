@@ -45,4 +45,64 @@
     <style name="Widget.ActionBar.Transparent">
         <item name="android:background">@android:color/transparent</item>
     </style>
+    
+    
+    <style name="Theme.Themchuctet" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_themchuctet</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Themchuctet</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Themchuctet</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Themchuctet</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Themchuctet</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Themchuctet</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_themchuctet</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_themchuctet</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Themchuctet</item>
+        
+        
+    </style>
+
+    <style name="ActionBar.Solid.Themchuctet" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:background">@drawable/ab_solid_themchuctet</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_themchuctet</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_themchuctet</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Themchuctet</item>
+         <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Themchuctet" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/ab_transparent_themchuctet</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Themchuctet</item>
+    </style>
+
+    <style name="PopupMenu.Themchuctet" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_themchuctet</item>	
+    </style>
+
+    <style name="DropDownListView.Themchuctet" parent="@android:style/Widget.Holo.Light.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_themchuctet</item>
+    </style>
+
+    <style name="ActionBarTabStyle.Themchuctet" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_themchuctet</item>
+    </style>
+
+    <style name="DropDownNav.Themchuctet" parent="@android:style/Widget.Holo.Light.Spinner">
+        <item name="android:background">@drawable/spinner_background_ab_themchuctet</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_themchuctet</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_themchuctet</item>
+    </style>
+    
+    <style name="ProgressBar.Themchuctet" parent="@android:style/Widget.Holo.Light.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_themchuctet</item>
+    </style>
+    
+    <style name="ActionButton.CloseMode.Themchuctet" parent="@android:style/Widget.Holo.Light.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_themchuctet</item>
+    </style>
+
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Themchuctet.Widget" parent="@android:style/Theme.Holo">
+        <item name="android:popupMenuStyle">@style/PopupMenu.Themchuctet</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Themchuctet</item>
+    </style>
 </resources>

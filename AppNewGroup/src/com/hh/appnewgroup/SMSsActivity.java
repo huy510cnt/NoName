@@ -14,7 +14,7 @@ import com.hh.appnewgroup.adapter.SMSViewpagerAdapter;
 import com.hh.appnewgroup.db.ReadDB;
 import com.hh.appnewgroup.db.SMSObject;
 
-public class SMSsActivity extends Activity {
+public class SMSsActivity extends ActivityBase {
 	private ReadDB mReadDB;
 	private ViewPager mPager;
 	private SMSViewpagerAdapter mPagerAdapter;
@@ -24,6 +24,7 @@ public class SMSsActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.sms_view_activity);
 		getActionBar().hide();
 
@@ -95,5 +96,10 @@ public class SMSsActivity extends Activity {
 		});
 
 		mReadDB.closeDatabase();
+	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
 	}
 }

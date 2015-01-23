@@ -46,6 +46,7 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		overridePendingTransition(R.anim.popup_right_in, R.anim.popup_left_out);
 		setContentView(R.layout.activity_main);
 
 		// Initilization
@@ -59,7 +60,6 @@ public class MainActivity extends FragmentActivity implements
 		actionBar.setDisplayShowHomeEnabled(false);
 		actionBar.setDisplayShowTitleEnabled(false);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);	
-		actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff0000"))); 
 		// Adding Tabs
 		for (int tab_name : tabs) {
 			actionBar.addTab(actionBar.newTab().setIcon(tab_name).setTabListener(this));
@@ -68,6 +68,8 @@ public class MainActivity extends FragmentActivity implements
 		/**
 		 * on swiping the viewpager make respective tab selected
 		 * */
+		actionBar.setSelectedNavigationItem(1);
+		viewPager.setCurrentItem(1);
 		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
 			@Override
@@ -124,5 +126,10 @@ public class MainActivity extends FragmentActivity implements
 			mAnimationType = Constant.mScale;
 		}
 		return mAnimationType;
+	}
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		overridePendingTransition(R.anim.popup_right_in, R.anim.popup_left_out);
 	}
 }

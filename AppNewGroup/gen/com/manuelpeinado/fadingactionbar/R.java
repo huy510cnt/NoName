@@ -8,20 +8,20 @@ package com.manuelpeinado.fadingactionbar;
 
 public final class R {
 	public static final class drawable {
-		public static final int fab__gradient = 0x7f020006;
-		public static final int fab__gradient_light = 0x7f020007;
+		public static final int fab__gradient = 0x7f02001e;
+		public static final int fab__gradient_light = 0x7f02001f;
 	}
 	public static final class id {
-		public static final int fab__container = 0x7f090005;
-		public static final int fab__content_top_margin = 0x7f090006;
-		public static final int fab__gradient = 0x7f090002;
-		public static final int fab__header_container = 0x7f090001;
-		public static final int fab__listview_background = 0x7f090003;
-		public static final int fab__scroll_view = 0x7f090004;
+		public static final int fab__container = 0x7f0a0009;
+		public static final int fab__content_top_margin = 0x7f0a000a;
+		public static final int fab__gradient = 0x7f0a0006;
+		public static final int fab__header_container = 0x7f0a0005;
+		public static final int fab__listview_background = 0x7f0a0007;
+		public static final int fab__scroll_view = 0x7f0a0008;
 	}
 	public static final class layout {
-		public static final int fab__header_container = 0x7f030002;
-		public static final int fab__listview_container = 0x7f030003;
-		public static final int fab__scrollview_container = 0x7f030004;
+		public static final int fab__header_container = 0x7f030003;
+		public static final int fab__listview_container = 0x7f030004;
+		public static final int fab__scrollview_container = 0x7f030005;
 	}
 }
