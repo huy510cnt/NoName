@@ -79,8 +79,6 @@ public class SMSsActivity extends Activity {
 
 			@Override
 			public void onPageSelected(int position) {
-				SMSViewpagerAdapter.tvPager.setText("" + (position + 1) + " / "
-						+ lstSMS.size());
 			}
 
 			@Override

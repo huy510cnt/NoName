@@ -48,7 +48,7 @@ public class SMSViewpagerAdapter extends PagerAdapter {
 		TextView tvSMSView = (TextView) v.findViewById(R.id.tvSMSView);
 		tvPager = (TextView) v.findViewById(R.id.tvnumPages);
 		
-		tvPager.setText(position +" / " + arr.size());
+		tvPager.setText((position+1) +" / " + arr.size());
 
 		
 		tvSMSView.setText(sms1.getContent());
