@@ -57,7 +57,8 @@ public class BetterFragment extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				Intent mIntent = new Intent(mContext, SMSsActivity.class);
-				mIntent.putExtra("sms_id",String.valueOf(position));
+				mIntent.putExtra("sms_id",position);
+				mIntent.putExtra("key",2);
 				startActivity(mIntent);
 			}
 		});

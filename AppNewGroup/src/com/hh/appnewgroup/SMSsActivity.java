@@ -17,7 +17,7 @@ import com.hh.appnewgroup.db.SMSObject;
 public class SMSsActivity extends Activity {
 	private ReadDB mReadDB;
 	private ViewPager mPager;
-	private SMSViewpagerAdapter mPagerAdapter ;
+	private SMSViewpagerAdapter mPagerAdapter;
 	private ArrayList<SMSObject> lstSMS = new ArrayList<SMSObject>();
 	private TextView tvBack;
 
@@ -26,29 +26,33 @@ public class SMSsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sms_view_activity);
 		getActionBar().hide();
-		
+
 		Intent mIntent = getIntent();
 		int position = 0;
+		int key = 0;
+		int id_category = 0;
 		mPager = (ViewPager) findViewById(R.id.view_pager);
 		tvBack = (TextView) findViewById(R.id.tvBack);
-		
+
 		if (mIntent != null) {
-			position = Integer.valueOf(mIntent.getStringExtra("sms_id"));
+			position = Integer.valueOf(mIntent.getIntExtra("sms_id",0));
+			id_category = Integer
+					.valueOf(mIntent.getIntExtra("id_category",0));
+			key = Integer.valueOf(mIntent.getIntExtra("key",0));
 		}
-		
+
 		tvBack.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				onBackPressed();
 			}
 		});
-		getData(position);
-		
+		getData(position, id_category, key);
 
 	}
 
-	public void getData(int current) {
+	public void getData(int current, int id_category,int key) {
 		mReadDB = new ReadDB(SMSsActivity.this);
 		try {
 			mReadDB.createDatabase();
@@ -58,18 +62,25 @@ public class SMSsActivity extends Activity {
 		}
 		if (lstSMS != null)
 			lstSMS.clear();
-		
-		lstSMS = mReadDB.getlistSMSObjectPopulate();
-		
+
+		if (key == 2) {
+			lstSMS = mReadDB.getlistSMSObjectPopulate();
+		} else if(key==1) {
+			lstSMS = mReadDB.getlistSMSObject(id_category);
+		}
+		else{
+		}
+
 		mPagerAdapter = new SMSViewpagerAdapter(SMSsActivity.this, lstSMS);
 		mPager.setAdapter(mPagerAdapter);
 		mPager.setCurrentItem(current);
-		
+
 		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
 			@Override
 			public void onPageSelected(int position) {
-				SMSViewpagerAdapter.tvPager.setText("" + (position + 1) + " / " + lstSMS.size());
+				SMSViewpagerAdapter.tvPager.setText("" + (position + 1) + " / "
+						+ lstSMS.size());
 			}
 
 			@Override
@@ -84,7 +95,7 @@ public class SMSsActivity extends Activity {
 
 			}
 		});
-		
+
 		mReadDB.closeDatabase();
 	}
 }

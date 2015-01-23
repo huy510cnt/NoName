@@ -3,9 +3,12 @@ package com.hh.appnewgroup;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -70,6 +73,20 @@ public class GreetingsActivity extends Activity {
 		listGreet = (ListView) findViewById(android.R.id.list);
 		PopularSMSAdapter adapter=new PopularSMSAdapter(GreetingsActivity.this, R.layout.item_list_sms, mLisSms);
 		listGreet.setAdapter(adapter);
+		
+		listGreet.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				Intent mIntent = new Intent(GreetingsActivity.this, SMSsActivity.class);
+				mIntent.putExtra("sms_id",arg2);
+				mIntent.putExtra("id_category",id_category);
+				mIntent.putExtra("key", 1);
+				startActivity(mIntent);
+			}
+		});
 	}
 
 
