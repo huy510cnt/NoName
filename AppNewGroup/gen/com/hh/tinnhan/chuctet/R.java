@@ -126,7 +126,7 @@ public final class R {
         public static final int tab_unselected_themchuctet=0x7f020057;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a001c;
+        public static final int action_settings=0x7f0a001e;
         public static final int fab__container=0x7f0a000b;
         public static final int fab__content_top_margin=0x7f0a000c;
         public static final int fab__gradient=0x7f0a0008;
@@ -134,27 +134,29 @@ public final class R {
         public static final int fab__listview_background=0x7f0a0009;
         public static final int fab__scroll_view=0x7f0a000a;
         public static final int image_header=0x7f0a0010;
-        public static final int imgIcon=0x7f0a0017;
+        public static final int imgIcon=0x7f0a0019;
+        public static final int layoutSms1=0x7f0a0015;
+        public static final int layoutSms2=0x7f0a0017;
         public static final int logo_img=0x7f0a0004;
         public static final int lvCategory=0x7f0a000e;
         public static final int lvFavorite=0x7f0a000f;
         public static final int lvPopulated=0x7f0a000d;
         public static final int pager=0x7f0a0001;
         public static final int pro_txt=0x7f0a0005;
-        public static final int rlMenu=0x7f0a0018;
+        public static final int rlMenu=0x7f0a001a;
         public static final int root=0x7f0a0003;
         public static final int second_layout=0x7f0a0000;
         public static final int startAppBanner=0x7f0a0002;
         public static final int track_txt=0x7f0a0006;
-        public static final int tvBack=0x7f0a0019;
-        public static final int tvLike=0x7f0a0015;
+        public static final int tvBack=0x7f0a001b;
+        public static final int tvLike=0x7f0a0016;
         public static final int tvSMSName=0x7f0a0011;
         public static final int tvSMSNameFavorite=0x7f0a0012;
         public static final int tvSMSView=0x7f0a0014;
-        public static final int tvSent=0x7f0a0016;
-        public static final int tvTitle=0x7f0a001a;
+        public static final int tvSent=0x7f0a0018;
+        public static final int tvTitle=0x7f0a001c;
         public static final int tvnumPages=0x7f0a0013;
-        public static final int view_pager=0x7f0a001b;
+        public static final int view_pager=0x7f0a001d;
     }
     public static final class layout {
         public static final int activity_greetings=0x7f030000;
