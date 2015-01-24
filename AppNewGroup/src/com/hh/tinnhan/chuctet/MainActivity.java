@@ -17,8 +17,6 @@ import com.hh.tinnhan.chuctet.function.UtilFuntion;
 import com.startapp.android.publish.StartAppAd;
 import com.startapp.android.publish.StartAppSDK;
 import com.startapp.android.publish.banner.Banner;
-import com.startapp.android.publish.splash.SplashConfig;
-import com.startapp.android.publish.splash.SplashConfig.Theme;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -48,12 +46,12 @@ public class MainActivity extends FragmentActivity implements
 		overridePendingTransition(R.anim.popup_right_in, R.anim.popup_left_out);
 		StartAppSDK.init(this, Config.DEVELOPE_ID_STARTAPP, Config.APP_ID_STARTAPP, true); //TODO: Replace with your IDs
 		/** Create Splash Ad **/
-		StartAppAd.showSplash(this, savedInstanceState,
-				new SplashConfig()
-					.setTheme(Theme.GLOOMY)
-					.setLogo(R.drawable.ic_launcher_lg)
-					.setAppName(getString(R.string.app_name))
-		);
+//		StartAppAd.showSplash(this, savedInstanceState,
+//				new SplashConfig()
+//					.setTheme(Theme.GLOOMY)
+//					.setLogo(R.drawable.ic_launcher_lg)
+//					.setAppName(getString(R.string.app_name))
+//		);
 		
 		setContentView(R.layout.activity_main);
 		

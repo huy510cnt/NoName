@@ -3,11 +3,6 @@ package com.hh.tinnhan.chuctet.adapter;
 
 import java.util.ArrayList;
 
-import com.hh.tinnhan.chuctet.GreetingsActivity;
-import com.hh.tinnhan.chuctet.db.CategoryCache;
-import com.hh.tinnhan.chuctet.db.CategoryObject;
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -17,6 +12,10 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+
+import com.hh.tinnhan.chuctet.GreetingsActivity;
+import com.hh.tinnhan.chuctet.db.CategoryCache;
+import com.hh.tinnhan.chuctet.db.CategoryObject;
 
 public class AdapterCategorys extends BaseAdapter{
 	private int resouce;
